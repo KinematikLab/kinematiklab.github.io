@@ -7,57 +7,53 @@
 <title>KinematikLab | Automotive Projects</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
 <style>
-body { background: #fff; color: #262524; font-size: 1rem; line-height: 1.63; }
-.wrap { max-width: 54rem; }
-a { color: #244967; text-underline-offset: .19em; }
-a:hover { color: #162f45; }
-a:focus-visible { outline: 2px solid #244967; outline-offset: 4px; }
-header, footer { font-size: .9rem; }
-main p { max-width: 66ch; }
-h1 { font-weight: 620; font-size: clamp(2rem, 5vw, 2.95rem); letter-spacing: -.04em; }
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.05rem; }
-.entry + .entry { margin-top: .85rem; }
-.entry h3 { margin-bottom: .2rem; }
-.entry p { margin-bottom: 0; }
-.private h3 { font-weight: 600; }
-.repo-names { column-width: 13rem; padding-left: 1.15rem; font-size: .94rem; overflow-wrap: anywhere; }
-.repo-names li { break-inside: avoid; }
-.year time { font-variant-numeric: tabular-nums; color: #595653; }
-.kin h1, .kin h2 { font-family: Georgia, serif; }
-.kin h1 { font-weight: 400; }
-.kin .repo h4 { font-size: 1.02rem; overflow-wrap: anywhere; }
-.status { color: #4d5d50; font-size: .85rem; }
-@media (min-width: 576px) {
-  .year time { position: sticky; top: 1rem; }
+body { margin: 0; background: var(--page); color: var(--ink); line-height: 1.55; }
+.wrap { max-width: 72rem; }
+a { color: var(--link); text-underline-offset: .19em; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+header,footer { font-size: .9rem; }
+h1 { font-size: clamp(2rem,4vw,3.35rem); letter-spacing: -.055em; }
+h2 { font-size: 1.35rem; }
+h3,h4 { font-size: 1.02rem; }
+p { max-width: 68ch; }
+.layout { align-items: start; }
+.sidebar { padding: clamp(1rem, 2.5vw, 1.75rem); }
+.sidebar p { font-size: .94rem; }
+.sidebar > :last-child, .sidebar p:last-child { margin-bottom: 0; }
+@media (min-width: 992px) {
+  .sidebar { position: sticky; top: 1rem; }
 }
-.year-copy > p, .year .col-sm-10 > p { margin-bottom: .65rem; }
-.repo-names { margin-bottom: .2rem; }
-.build a { display: inline-block; }
 @media (max-width: 575.98px) {
   .wrap { --bs-gutter-x: 1.5rem; }
-  .year time { font-size: .9rem; }
-  .repo { --bs-gutter-y: .15rem; }
 }
+:root { --page: #f4f0e7; --ink: #27251f; --link: #644522; }
+.kin .sidebar { background: #e9ddc4; border-top: 4px solid #80582c; }
+.kin h1 { font-family: Georgia,serif; font-weight: 400; }
+.catalog { background: #fffdf8; border-top: 4px solid #80582c; padding: clamp(1rem, 3vw, 1.65rem); }
+.repo { border-top: 1px solid #e1d8c7; padding: .75rem 0; }
+.repo h4 { overflow-wrap: anywhere; margin-bottom: .15rem; }
+.status { font-size: .78rem; font-weight: 650; color: #574730; }
+.repo p { font-size: .94rem; }
+
 </style>
 </head>
-<body class="kin">
+<body data-layout="portfolio-split" class="kin">
 <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 
 <header class="container wrap d-flex flex-wrap align-items-baseline justify-content-between gap-2 py-2 border-bottom"><strong>KinematikLab</strong><nav class="d-flex flex-wrap gap-3" aria-label="Site links"><a href="#repositories">Repositories</a><a href="https://arycahy.github.io/#timeline">Ary’s timeline</a><a href="https://github.com/KinematikLab">GitHub</a></nav></header>
 <main class="container wrap" id="main">
-<div class="pt-4 pb-2"><h1 class="mb-2">KinematikLab</h1><p>I started working on the B13 because I wanted to understand its faults well enough to trace them myself. During one no-start, I found power and ground but no spark or injector pulse. Reflowing the crank angle sensor pins got the engine running again for a few months.</p><p>Later I built a dedicated harness and moved to a Speeduino ECU. The AC controller and the engine display came out of working on that same car.</p></div>
-<section class="border-top py-3" aria-labelledby="build"><h2 id="build">Nissan B13 · Speeduino</h2><p>I built the modular harness and crank trigger wheel for the standalone ECU, then used the car to work through wiring and sync faults.</p><a href="https://arycahy.github.io/projects/nissan-b13/">Read the B13 build notes</a></section>
-<section class="border-top pt-3" id="repositories" aria-labelledby="catalog"><h2 id="catalog">Automotive repositories</h2><p class="small text-body-secondary mb-3">Project status is based on the code and commit history. It does not indicate hardware validation.</p>
+<div class="row layout g-3 g-lg-4 py-3">
+<div class="col-lg-4"><aside class="sidebar" aria-label="Workshop notes"><h1 class="mb-2">KinematikLab</h1><p>I started working on the B13 because I wanted to understand its faults well enough to trace them myself. During one no-start, I found power and ground but no spark or injector pulse. Reflowing the crank angle sensor pins got the engine running again for a few months.</p><p>Later I built a dedicated harness and moved to a Speeduino ECU. The AC controller and the engine display came out of working on that same car.</p><section class="mt-3 pt-3 border-top border-secondary-subtle" aria-labelledby="build"><h2 id="build">Nissan B13 · Speeduino</h2><p>I built the modular harness and crank trigger wheel for the standalone ECU, then used the car to work through wiring and sync faults.</p><a href="https://arycahy.github.io/projects/nissan-b13/">Read the B13 build notes</a></section></aside></div>
+<div class="col-lg-8"><section class="catalog" id="repositories" aria-labelledby="catalog"><h2 id="catalog">Automotive repositories</h2><p class="small text-body-secondary mb-3">Project status is based on the code and commit history. It does not indicate hardware validation.</p>
 <h3 class="mt-3 mb-2">Public repositories</h3>
-<div class="repo row gx-3 gy-1 border-top py-2 mx-0"><div class="col-sm-4"><h4><a href="https://github.com/yrac/CarClimateControl">CarClimateControl</a></h4><p class="status mb-0">In Progress</p></div><p class="col-sm-8 mb-0">An Arduino AC controller that reads evaporator temperature and works with the ECU’s compressor permission signal. The repo includes firmware, a KiCad schematic, and a parts list.</p></div>
-<div class="repo row gx-3 gy-1 border-top py-2 mx-0"><div class="col-sm-4"><h4><a href="https://github.com/yrac/Carvionics">Carvionics</a></h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">A TFT dashboard prototype for Speeduino telemetry. I wrote the serial parser and built a UI demo for the display.</p></div>
+<div class="repo row gx-3 gy-1 mx-0"><div class="col-sm-4"><h4><a href="https://github.com/yrac/CarClimateControl">CarClimateControl</a></h4><p class="status mb-0">In Progress</p></div><p class="col-sm-8 mb-0">An Arduino AC controller that reads evaporator temperature and works with the ECU’s compressor permission signal. The repo includes firmware, a KiCad schematic, and a parts list.</p></div>
+<div class="repo row gx-3 gy-1 mx-0"><div class="col-sm-4"><h4><a href="https://github.com/yrac/Carvionics">Carvionics</a></h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">A TFT dashboard prototype for Speeduino telemetry. I wrote the serial parser and built a UI demo for the display.</p></div>
 <h3 class="mt-3 mb-2">Private repositories</h3>
-<div class="repo row gx-3 gy-1 border-top py-2 mx-0"><div class="col-sm-4"><h4>NissanSentraSetting</h4><p class="status mb-0">In Progress</p></div><p class="col-sm-8 mb-0">TunerStudio workspace for the B13, with calibration revisions and diagnostic logs.</p></div>
-<div class="repo row gx-3 gy-1 border-top py-2 mx-0"><div class="col-sm-4"><h4>speeduino-agent</h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">Prototype software for reviewing Speeduino data and tuning sessions. The backend and dashboard are present in the repository.</p></div>
-<div class="repo row gx-3 gy-1 border-top py-2 mx-0"><div class="col-sm-4"><h4>SentraSpeeduino</h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">Repository scaffold for the Sentra ECU project.</p></div>
-<div class="repo row gx-3 gy-1 border-top py-2 mx-0"><div class="col-sm-4"><h4>tune-agent</h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">Repository scaffold for a tuning tool.</p></div>
-</section>
+<div class="repo row gx-3 gy-1 mx-0"><div class="col-sm-4"><h4>NissanSentraSetting</h4><p class="status mb-0">In Progress</p></div><p class="col-sm-8 mb-0">TunerStudio workspace for the B13, with calibration revisions and diagnostic logs.</p></div>
+<div class="repo row gx-3 gy-1 mx-0"><div class="col-sm-4"><h4>speeduino-agent</h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">Prototype software for reviewing Speeduino data and tuning sessions. The backend and dashboard are present in the repository.</p></div>
+<div class="repo row gx-3 gy-1 mx-0"><div class="col-sm-4"><h4>SentraSpeeduino</h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">Repository scaffold for the Sentra ECU project.</p></div>
+<div class="repo row gx-3 gy-1 mx-0"><div class="col-sm-4"><h4>tune-agent</h4><p class="status mb-0">Postponed</p></div><p class="col-sm-8 mb-0">Repository scaffold for a tuning tool.</p></div>
+</section></div></div>
 </main>
 <footer class="wrap"><span>KinematikLab</span><a href="https://github.com/KinematikLab">Organization profile</a></footer>
 </body>
